@@ -1,0 +1,16 @@
+import math
+import os
+import random
+import re
+import sys
+
+from collections import Counter
+
+if __name__ == '__main__':
+    s = input()
+    counts = Counter(s) # Sort by (-frequency, character) so that: 
+    # - Higher frequency comes first 
+    # - Alphabetical order breaks ties 
+    sorted_counts = sorted(counts.items(), key=lambda x: (-x[1], x[0])) 
+    # Print top 3 
+    for char, freq in sorted_counts[:3]: print(char, freq)
