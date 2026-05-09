@@ -1,0 +1,28 @@
+import sys
+
+input = sys.stdin.readline
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    A = list(map(int, input().split()))
+
+    alt_sum = 0
+
+    min_odd = float('inf')
+    max_even = 0
+
+    for i in range(N):
+        val = abs(A[i])
+
+        if i % 2 == 0:   # odd position (1-based)
+            alt_sum += val
+            min_odd = min(min_odd, val)
+        else:            # even position
+            alt_sum -= val
+            max_even = max(max_even, val)
+
+    improvement = max(0, 2 * (max_even - min_odd))
+
+    print(alt_sum + improvement)
