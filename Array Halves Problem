@@ -1,0 +1,19 @@
+T = int(input())
+
+for _ in range(T):
+    D, d, P, Q = map(int, input().split())
+
+    # Number of complete intervals
+    full = D // d
+
+    # Remaining days
+    rem = D % d
+
+    # Sum of arithmetic progression
+    # d * [ full*P + Q*(0 + 1 + ... + full-1) ]
+    total = d * (full * P + Q * (full * (full - 1) // 2))
+
+    # Remaining days contribution
+    total += rem * (P + full * Q)
+
+    print(total)
