@@ -1,0 +1,27 @@
+from collections import defaultdict
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+
+    total = defaultdict(int)
+
+    # Division 3
+    for _ in range(N):
+        s, c = input().split()
+        total[s] += int(c)
+
+    # Division 2
+    for _ in range(N):
+        s, c = input().split()
+        total[s] += int(c)
+
+    # Division 1
+    for _ in range(N):
+        s, c = input().split()
+        total[s] += int(c)
+
+    ans = sorted(total.values())
+
+    print(*ans)
