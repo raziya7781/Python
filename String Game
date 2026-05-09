@@ -1,0 +1,19 @@
+import sys
+
+input = sys.stdin.readline
+
+T = int(input())
+
+for _ in range(T):
+    N = int(input())
+    S = input().strip()
+
+    zeros = S.count('0')
+    ones = S.count('1')
+
+    moves = min(zeros, ones)
+
+    if moves % 2 == 1:
+        print("Zlatan")
+    else:
+        print("Ramos")
